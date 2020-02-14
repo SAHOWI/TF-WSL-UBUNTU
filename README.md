@@ -47,6 +47,10 @@ C: drive!
 ```echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc```
 ```source ~/.bashrc```
 
+## Install PIP
+
+Allthough PYTHON has been installed together with ROS, the Python Packet Manager PIP is missing.
+```sudo apt install python-pip```
 
 # Install DBW
 ```bash <(wget -q -O - https://bitbucket.org/DataspeedInc/dbw_mkz_ros/raw/master/dbw_mkz/scripts/sdk_install.bash)```
