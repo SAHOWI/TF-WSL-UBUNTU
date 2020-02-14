@@ -45,3 +45,7 @@ rosdep update
 ## Activate ROS Kinetic Environment
 echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
+
+
+# Install DBW
+```bash <(wget -q -O - https://bitbucket.org/DataspeedInc/dbw_mkz_ros/raw/master/dbw_mkz/scripts/sdk_install.bash)```
