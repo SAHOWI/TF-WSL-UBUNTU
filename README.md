@@ -59,3 +59,13 @@ Allthough PYTHON has been installed together with ROS, the Python Packet Manager
 
 # Sample SDCarND
 ```sahowi@DESKTOP-4UKM82K:~$ git clone https://github.com/palgang/CarND-Capstone.git```
+
+Prepare Capstone Environment
+```cd CarND-Capstone```
+```pip install -r requirements.txt```
+This will install all the additionally required packages e.g. Tensorflow.
+ATTENTION: If you face any issues, repeat this step with --no-cache-dir!
+```pip install -r requirements.txt --no-cache-dir```
+
+
+
