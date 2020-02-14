@@ -18,6 +18,7 @@ Watch out for disk consumtion.
 If you started PowerShell as elevated user (aka "Administrator"), the ubuntu.apx has been download into the actual path, 
 which is usuallyc:\windows\system32 - good practice is to move it straight away into a software repository top save space on your
 C: drive!
+
 ```move .\Ubuntu.appx 'D:\Install Software\'```
 ```Add-AppxPackage D:\Install Software\app_name.appx```
 
@@ -26,25 +27,25 @@ C: drive!
 # Install ROS
 
 ## Setup your sources.list
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+```sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'```
 
 
 ## Setup yopur keys
-sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+```sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654```
 
 ## Update Package Index
-sudo apt-get update
+```sudo apt-get update```
 
 ## Install ROS Kinetic
-sudo apt-get install ros-kinetic-desktop-full
+```sudo apt-get install ros-kinetic-desktop-full```
 
 ## Initialize rosdep
-sudo rosdep init
-rosdep update
+```sudo rosdep init```
+```rosdep update```
 
 ## Activate ROS Kinetic Environment
-echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
-source ~/.bashrc
+```echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc```
+```source ~/.bashrc```
 
 
 # Install DBW
