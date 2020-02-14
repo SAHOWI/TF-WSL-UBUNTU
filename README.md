@@ -50,3 +50,8 @@ C: drive!
 
 # Install DBW
 ```bash <(wget -q -O - https://bitbucket.org/DataspeedInc/dbw_mkz_ros/raw/master/dbw_mkz/scripts/sdk_install.bash)```
+
+
+
+# Sample SDCarND
+```sahowi@DESKTOP-4UKM82K:~$ git clone https://github.com/palgang/CarND-Capstone.git```
