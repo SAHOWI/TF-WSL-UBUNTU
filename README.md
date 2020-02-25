@@ -6,7 +6,7 @@
 
 ## Enable WSL
 ```Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux```
---> no reboot required
+--> reboot required
 
 ## Download the Ubuntu 16.04 from Linux
 
@@ -19,7 +19,7 @@ If you started PowerShell as elevated user (aka "Administrator"), the ubuntu.apx
 which is usuallyc:\windows\system32 - good practice is to move it straight away into a software repository top save space on your
 C: drive!
 
-```move .\Ubuntu.appx 'D:\Install Software\'```
+```move .\Ubuntu.appx 'D:\Install Software\'```  
 ```Add-AppxPackage D:\Install Software\app_name.appx```
 
 
@@ -37,14 +37,14 @@ C: drive!
 ```sudo apt-get update```
 
 ## Install ROS Kinetic
-```sudo apt-get install ros-kinetic-desktop-full```
+```sudo apt-get install ros-kinetic-desktop-full --fixmissing```
 
 ## Initialize rosdep
-```sudo rosdep init```
+```sudo rosdep init```  
 ```rosdep update```
 
 ## Activate ROS Kinetic Environment
-```echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc```
+```echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc```  
 ```source ~/.bashrc```
 
 ## Install PIP
@@ -61,7 +61,7 @@ Allthough PYTHON has been installed together with ROS, the Python Packet Manager
 ```sahowi@DESKTOP-4UKM82K:~$ git clone https://github.com/palgang/CarND-Capstone.git```
 
 Prepare Capstone Environment
-```cd CarND-Capstone```
+```cd CarND-Capstone```  
 ```pip install -r requirements.txt```
 This will install all the additionally required packages e.g. Tensorflow.
 ATTENTION: If you face any issues, repeat this step with --no-cache-dir!
