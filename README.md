@@ -1,16 +1,32 @@
-# Enable Windows 10 with Ubuntu 16.04 on Windows Subsystem fro Linux (WSL)
+# Enable Windows 10 with Ubuntu 18.04 on Windows Subsystem fro Linux (WSL)
 
 ## Enable Hyper-V
-```Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All```
+Microsofts Hyper-V must be enabled, as Windows Subsystem for Linux (WSL) relies on it.
+
+### Check if Hyper-V is already enabled
+Open an elevated PowerShell (Search for PowerShell, click with right mouse button and select "run as administrator")
+```PowerShell
+Get-WindowsOptionalFeature -FeatureName Microsoft-Hyper-V-All -Online
+```
+![Hyper-V check](./images/Check4HyperV.png "PowerShell check for Hyper-V")
+
+### Install Hyper-V
+```PowerShell
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+```
 --> reboot required
 
 ## Enable WSL
-```Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux```
+```PowerShell
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux```
 --> reboot required
 
 ## Download the Ubuntu 16.04 from Linux
 
-```Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseBasicParsing```
+```PowerShell
+mkdir C:\TEMP
+Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile C:\TEMP\Ubuntu.appx -UseBasicParsing
+```
 --> not reboot required
 
 ## Install the Ubuntu
