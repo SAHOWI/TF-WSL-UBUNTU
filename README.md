@@ -10,19 +10,30 @@ Get-WindowsOptionalFeature -FeatureName Microsoft-Hyper-V-All -Online
 ```
 ![Hyper-V check](./images/Check4HyperV.png "PowerShell check for Hyper-V")
 
+If "State" is shown as enabled, skip the "Install Hyper-V" step.
+
 ### Install Hyper-V
 ```PowerShell
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 ```
 --> *reboot required*
 
-## Enable WSL
+### Check if WSL is enabled
+```PowerShell
+Get-WindowsOptionalFeature -FeatureName Microsoft-Windows-Subsystem-Linux -Online
+````
+![WSL check](./images/Check4WSL.png "PowerShell check for WSL")
+
+If "State" is shown as enabled, skip the "Enable WSL" step.
+
+
+### Enable WSL
 ```PowerShell
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
 --> *reboot required*
 
-## Download the Ubuntu 16.04 from Linux
+## Download the Ubuntu 18.04 from Linux
 
 ```PowerShell
 mkdir C:\TEMP
@@ -37,8 +48,13 @@ If you started PowerShell as elevated user (aka "Administrator"), the ubuntu.apx
 which is usuallyc:\windows\system32 - good practice is to move it straight away into a software repository top save space on your
 C: drive!
 
-```move .\Ubuntu.appx 'D:\Install Software\'```  
-```Add-AppxPackage D:\Install Software\app_name.appx```
+```PowerShell
+Add-AppxPackage C:\TEMP\Ubuntu-1804.appx
+```
+![Ubuntu install](./images/Ubuntu1804install.png "Install Ubuntu 18.04 WSL package")
+
+
+
 
 
 
