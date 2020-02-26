@@ -1,0 +1,2 @@
+# Requirement List for Tensor Flow
+https://github.com/fo40225/tensorflow-windows-wheel/blob/master/2.0.0/py37/CPU/avx2/tensorflow-2.0.0-cp37-cp37m-win_amd64.whl
