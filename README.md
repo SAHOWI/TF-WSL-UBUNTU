@@ -25,8 +25,9 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 ```PowerShell
 mkdir C:\TEMP
-Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile C:\TEMP\Ubuntu.appx -UseBasicParsing
+Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile C:\TEMP\Ubuntu-1804.appx -UseBasicParsing
 ```
+![Ubuntu download](./images/Ubuntu1804download.png "Download Ubuntu 18.04 WSL package")
 --> not reboot required
 
 ## Install the Ubuntu
