@@ -58,6 +58,35 @@ Add-AppxPackage C:\TEMP\Ubuntu-1804.appx
 
 
 
+# Start Ubuntu Bash/WSL
+
+## Install latest Patches
+
+### Refresh Update List (???)
+```bash
+sudo apt update
+````
+
+### Run Package Upgrade
+```bash
+sudo apt upgrade
+````
+
+## Install PIP
+
+## Install dependencies
+
+Download requirements.txt (link)
+```bash
+pip install -r requirements.txt
+````
+
+
+
+
+
+
+
 # Install ROS
 
 ## Setup your sources.list
