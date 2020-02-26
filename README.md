@@ -14,12 +14,13 @@ Get-WindowsOptionalFeature -FeatureName Microsoft-Hyper-V-All -Online
 ```PowerShell
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 ```
---> reboot required
+--> *reboot required*
 
 ## Enable WSL
 ```PowerShell
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux```
---> reboot required
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+```
+--> *reboot required*
 
 ## Download the Ubuntu 16.04 from Linux
 
