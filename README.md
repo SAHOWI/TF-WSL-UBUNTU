@@ -72,63 +72,55 @@ sudo apt update
 sudo apt upgrade
 ````
 
-## Install PIP
+## Prepare the Environment
 
-## Install dependencies
+### Install Python and PIP
+
+```bash
+sudo apt install python3-dev python3-pip
+```
+
+### Install dependencies
 
 Download requirements.txt (link)
 ```bash
 pip install -r requirements.txt
 ````
 
+### Install Bazel
+
+Dateils can be found here: https://docs.bazel.build/versions/master/install-ubuntu.html
+
+Prepare
+```bash
+sudo apt install curl
+curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add -
+echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
+```
+Install
+```bash
+sudo apt update && sudo apt install bazel-2.0.0
+sudo apt update && sudo apt full-upgrade
+```
+
+Install JDK 
+```bash
+sudo apt install openjdk-11-jdk
+```
+
+## Build Tensorflow 
 
 
+```bash
+git clone https://github.com/tensorflow/tensorflow.git
+```
 
+```bash
+cd tensorflow
+./configure
+bazel build //tensorflow/tools/pip_package:build_pip_package
 
-
-
-# Install ROS
-
-## Setup your sources.list
-```sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'```
-
-
-## Setup yopur keys
-```sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654```
-
-## Update Package Index
-```sudo apt-get update```
-
-## Install ROS Kinetic
-```sudo apt-get install ros-kinetic-desktop-full --fixmissing```
-
-## Initialize rosdep
-```sudo rosdep init```  
-```rosdep update```
-
-## Activate ROS Kinetic Environment
-```echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc```  
-```source ~/.bashrc```
-
-## Install PIP
-
-Allthough PYTHON has been installed together with ROS, the Python Packet Manager PIP is missing.
-```sudo apt install python-pip```
-
-# Install DBW
-```bash <(wget -q -O - https://bitbucket.org/DataspeedInc/dbw_mkz_ros/raw/master/dbw_mkz/scripts/sdk_install.bash)```
-
-
-
-# Sample SDCarND
-```sahowi@DESKTOP-4UKM82K:~$ git clone https://github.com/palgang/CarND-Capstone.git```
-
-Prepare Capstone Environment
-```cd CarND-Capstone```  
-```pip install -r requirements.txt```
-This will install all the additionally required packages e.g. Tensorflow.
-ATTENTION: If you face any issues, repeat this step with --no-cache-dir!
-```pip install -r requirements.txt --no-cache-dir```
+```
 
 
 
